@@ -1,9 +1,3 @@
-# Template presentaciones FIUBA
+# Templates FIUBA
 
-Basado en <https://www.overleaf.com/project/605a946639aef31985f3f9ec>. Usado con el permiso escrito del autor Casimir Fayt.
-
-## Instalación en Linux
-
-``` bash
-sudo apt-get install texlive-full
-```
+El directorio **Presentaciones** contiene el template para diapositivas para presentar clases.
