@@ -1,0 +1,54 @@
+% Copyright 2019 Casimir Fayt
+
+% Author: Casimir Fayt
+% Description: This is an unofficial Université Libre de Bruxelles Beamer Template. Feel free to use it, modify it, share it.
+% If so, please warn me at fayt.casimir@gmail.com
+% Version: 1.0
+
+\newtheorem{redblock}{block}
+\newtheorem{redblocktitle}{block}
+\newtheorem{blueblock}{block}
+\newtheorem{greenblock}{block}
+
+
+\newenvironment<>{redblocktitle}[1]
+{%
+  \setbeamercolor{block title}{fg=white,bg=red!75!black}%
+  \begin{block}{#1}
+}
+{%
+    \end{block}
+}
+
+
+\newenvironment<>{redblock}[1]
+{%
+  \setbeamercolor{block title}{fg=white,bg=red!75!black}%
+  \begin{block}{#1}
+  #2
+}
+{
+    \end{block}
+}
+
+
+\newenvironment<>{blueblock}[1]
+{%
+  \setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+  \begin{block}{#1}
+  #2
+}
+{
+    \end{block}
+}
+
+
+\newenvironment<>{greenblock}[1]
+{%
+  \setbeamercolor{block title}{fg=white,bg=green!50!black}%
+  \begin{block}{#1}
+  #2
+}
+{
+    \end{block}
+}

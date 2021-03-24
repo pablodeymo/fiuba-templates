@@ -1,0 +1,99 @@
+\documentclass{beamer}
+\input{FrontMatter/preamble.tex}
+\usetheme{ULB}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEPARTMENT LOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\DepartmentLogo{theme/logos/QuIC.png}
+% In the folder "Im/theme/logos/" please import the Department logo image. This will appear at north east corner of every frame
+
+\setcounter{DepartmentLogo}{2}
+% Please select 0 if you want a blank NE corner for each frame
+% Please select 1 if you want the Department Logo only on the Title Page (NE corner)
+% Please select 2 if you want the Department Logo on each frame (still NE corner)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FACULTY LOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\FacultyLogo{theme/logos/EPB.png}
+% In the folder "Im/theme/logos/" please import the Faculty logo image. This will appear at south east corner of title frame
+
+\setcounter{FacultyLogo}{1}
+% Please select 1 if you want the Faculty Logo to be displayed in the sE corner of the title frame
+% Please select 0 if you want a blank SE corner for the title frame
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FOOTLINE MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{FootlineChoice}{2}
+% Please select value 0,1, or 2 for the footline alignment.
+% All footlines display the [author] in SW corner and [institute] in SE corner,
+% but you can choose between the following options for the center of the footline :
+
+% Footline Aligment 0 : 
+%       Only the current section is displayed. All is aligned with the very bottom of the frame.
+
+% Footline Aligment 1 :
+%       Only the current section is displayed. All is aligned a bit higher to escape potential crops when projecting.
+
+% Footline Aligment 2 : 
+%       Current section and subsection are displayed.  All is aligned a bit higher to escape potential crops when projecting.
+
+% Footline Alignment 3 :
+%       Nothing displayed at center. [author] and [institute] aligned with very bottom of frame.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN BODY OF PRESENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Title of Presentation}
+\date{21$^{st}$ May of 2019}
+\author[Casimir Fayt]{Casimir Fayt}
+\institute[INFO-H514]
+{
+  Ecole Polytechnique de Bruxelles\\
+  Université Libre de Bruxelles
+}
+
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\end{frame}
+
+
+\AtBeginSection[]
+{
+ \begin{frame}[noframenumbering,plain]{Outline}
+    \tableofcontents[currentsection, currentsubsection, hideothersubsections,subsubsectionstyle=show/show/show/hide]
+    
+ \end{frame} 
+}
+
+
+
+\section{Section 1}
+\input{Section_Files/Sec1.tex}
+
+\nocite{*}
+\begin{frame}[plain, noframenumbering,allowframebreaks]{References}
+    \printbibliography
+\end{frame}
+
+
+\appendix
+
+\input{Section_Files/Appendix.tex}
+
+
+\end{document}

@@ -1,0 +1,43 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[
+	backend=biber,
+	style=numeric,
+	citestyle=numeric,
+	sorting=none,
+	url=false]{biblatex}
+
+\setbeamertemplate{bibliography item}[text]
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{Section_Files/biblio.bib}
+
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{lipsum}
+
+
+\setcounter{tocdepth}{3}
+
+\usepackage{bbold}
+\usepackage{scalerel}[2016/12/29]
+
+\newcolumntype{M}[1]{>{$\displaystyle\qquad}p{#1}<{$}}
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage{graphicx}
+\graphicspath{{Im/}}
+
+
+\newcounter{FootlineChoice} 
+% Counter to allow the user to choose between a few footlines implemented by owner
+
+\newcounter{DepartmentLogo}
+% Counter to allow the user to choose whether to display the Department Logo in NE corner
+
+\newcounter{FacultyLogo}
+% Counter to allow the user to choose whether to display the Faculty Logo in SE corner

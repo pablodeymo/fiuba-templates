@@ -1,0 +1,291 @@
+% Copyright 2019 Casimir Fayt
+
+% Author: Casimir Fayt
+% Description: This is an unofficial Université Libre de Bruxelles Beamer Template. Feel free to use it, modify it, share it.
+% If so, please warn me at fayt.casimir@gmail.com
+% Version: 1.0
+
+\mode<presentation>
+
+\setbeamertemplate{background}
+{
+  \begin{tikzpicture}
+        
+        \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+        
+        \node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
+            {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/ULB_VINCERE_gray_quart_0_10.jpg}};
+        
+        \ifnum\value{FacultyLogo}=1
+        {
+            \node[anchor=south east,inner sep=0pt] at (.998\paperwidth,0.15)
+            {\includegraphics[width=.4\textwidth,keepaspectratio]{\FacultyLogo}};
+        }\fi
+        
+        \node[anchor=north west,inner sep=0pt] at (0.02,\the\paperheight)
+            {\includegraphics[width=.7\textwidth,keepaspectratio]{theme/ULB-ligne-droite.jpg}};
+        
+        \node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
+            {\includegraphics[width=\the\paperwidth,keepaspectratio]{theme/ULB-ligne_couleurs_horizontale.jpg}};
+        
+        \ifnum\value{DepartmentLogo}>0
+        {
+            \node[anchor=north west, inner sep = 0pt] at (0.9\paperwidth,0.97\paperheight)
+            {\includegraphics[width=0.1\textwidth]{\DepartmentLogo}};
+        }\fi
+            
+        % Background for frames other than title page
+        \ifnum\thepage>1\relax%
+
+        \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   
+        \ifnum\value{DepartmentLogo}>1
+        {
+            \node[anchor=north west, inner sep = 0pt] at (0.9\paperwidth,0.97\paperheight)
+            {\includegraphics[width=0.1\textwidth]{\DepartmentLogo}};<
+        }\fi
+        
+        \node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
+            {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/ULB_VINCERE_gray_quart_0_10.jpg}};
+        
+        \node[anchor=north west,inner sep=0pt] at (.05,\the\paperheight)
+            {\includegraphics[height=.7\textheight,keepaspectratio]{theme/ULB-ligne-bas.jpg}};
+        
+        \node[anchor=south west,inner sep=0pt] at (.4,0)
+            {\includegraphics[width=.2cm,keepaspectratio]{theme/ULB-ligne_couleurs_verticale.jpg}};
+   
+        \fi    
+  \end{tikzpicture}
+}
+
+
+\setbeamercolor{section 1 in foot}{fg = blue_hl_bg_2}
+\setbeamercolor{section 2 in foot}{fg = blue_hl_bg_1}
+\setbeamerfont{subsection in foot}{size=\tiny}
+\setbeamerfont{section in foot}{size=\scriptsize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FOOTLINE MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{footline}
+    {
+        \ifnum\value{FootlineChoice}=0{
+            \leavevmode%
+            \hbox{%
+            
+            \begin{beamercolorbox}[wd=.25\paperwidth,center]{section 2 in foot}%
+              \usebeamerfont{author in head/foot}\insertshortauthor
+            \end{beamercolorbox}%
+            %
+            \begin{beamercolorbox}[wd=.5\paperwidth,center]{section 1 in foot}%    
+              \usebeamerfont{section in foot}%\insertshorttitle
+              \thesection.\,\insertsection
+            \end{beamercolorbox}%
+            %
+            \begin{beamercolorbox}[wd=.25\paperwidth, center]{section 2 in foot}%
+                  \begin{beamercolorbox}[wd=.2\paperwidth,center]{section 2 in foot}
+                      \usebeamerfont{date in head/foot}\hspace{.04\paperwidth}\insertshortinstitute{}
+                  \end{beamercolorbox}%
+                  \begin{beamercolorbox}[wd=.05\paperwidth,right]{section 2 in foot}
+                      \insertframenumber/\inserttotalframenumber\,\,
+                  \end{beamercolorbox}
+            \end{beamercolorbox}}
+        }\fi
+        \ifnum\value{FootlineChoice}=1{
+            \leavevmode
+            \hbox{
+                \begin{beamercolorbox}[wd=.25\paperwidth,center]{section 2 in foot}%
+                \usebeamerfont{author in head/foot}\vspace{-0.7em}\insertshortauthor
+                \end{beamercolorbox}%
+                %
+                \begin{beamercolorbox}[wd=.5\paperwidth,ht=1ex,dp=3ex,center]{section 1 in foot}%    
+                  \usebeamerfont{section in foot}%\insertshorttitle
+                  \ifx\insertsection\@empty\relax\else\thesection.\,\insertsection\fi
+                \end{beamercolorbox}%
+                %
+                \begin{beamercolorbox}[wd=.25\paperwidth, center]{section 2 in foot}%
+                      \begin{beamercolorbox}[wd=.2\paperwidth,center]{section 2 in foot}
+                          \usebeamerfont{date in head/foot}\vspace{-0.7em}\hspace{.04\paperwidth}\insertshortinstitute{}
+                      \end{beamercolorbox}%
+                      \begin{beamercolorbox}[wd=.05\paperwidth,right]{section 2 in foot}
+                          \usebeamerfont{date in head/foot}\vspace{-1.6em}\insertframenumber/\inserttotalframenumber\hspace{5pt}
+                      \end{beamercolorbox}
+                \end{beamercolorbox}}%
+                %
+                \vskip2ex%
+        }\fi
+        \ifnum\value{FootlineChoice}=2{
+            \leavevmode%
+            \hbox{%
+            
+            \begin{beamercolorbox}[wd=.25\paperwidth,center]{section 2 in foot}%
+              \usebeamerfont{author in head/foot}\vspace{-0.7em}\insertshortauthor
+            \end{beamercolorbox}%
+            %
+            \begin{beamercolorbox}[wd=.5\paperwidth,ht=1ex,dp=3ex,center]{section 1 in foot}%    
+              \usebeamerfont{section in foot}%\insertshorttitle
+              \ifx\insertsection\@empty\relax\else\thesection.\,\insertsection\fi
+            \end{beamercolorbox}%
+            %
+            \begin{beamercolorbox}[wd=.25\paperwidth, center]{section 2 in foot}%
+                  \begin{beamercolorbox}[wd=.2\paperwidth,center]{section 2 in foot}
+                      \usebeamerfont{date in head/foot}\vspace{-0.7em}\hspace{.04\paperwidth}\insertshortinstitute{}
+                  \end{beamercolorbox}%
+                  \begin{beamercolorbox}[wd=.05\paperwidth,right]{section 2 in foot}
+                      \usebeamerfont{date in head/foot}\vspace{-1.6em}\insertframenumber/\inserttotalframenumber\,\,
+                  \end{beamercolorbox}
+            \end{beamercolorbox}}%
+            %
+            
+            \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=1ex,center]{author in head/foot}%
+                  \usebeamerfont{subsection in foot}
+                  \ifx\insertsubsectionhead\@empty\relax\else\@alph\insertsubsectionnumber)\,\insertsubsectionhead\fi
+            \end{beamercolorbox}%  
+            \vskip0pt%
+       }\fi
+       \ifnum\value{FootlineChoice}=3{
+           \leavevmode%
+            \hbox{%
+            
+            \begin{beamercolorbox}[wd=.25\paperwidth,center]{section 2 in foot}%
+              \hskip15pt\usebeamerfont{author in head/foot}\insertshortauthor
+            \end{beamercolorbox}%
+            %
+            \hskip.5\paperwidth
+            %
+            \begin{beamercolorbox}[wd=.25\paperwidth, center]{section 2 in foot}%
+                  \begin{beamercolorbox}[wd=.2\paperwidth,center]{section 2 in foot}
+                      \usebeamerfont{date in head/foot}\hspace{.04\paperwidth}\insertshortinstitute{}
+                  \end{beamercolorbox}%
+                  \begin{beamercolorbox}[wd=.05\paperwidth,right]{section 2 in foot}
+                      \insertframenumber/\inserttotalframenumber\,\,
+                  \end{beamercolorbox}
+            \end{beamercolorbox}}
+       }\fi
+    }
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE FRAME MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{frametitle}
+{
+   \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+
+    \begin{beamercolorbox}[sep=0.1cm,wd=\textwidth]{frametitle}
+        \usebeamerfont{frametitle}%
+        \vskip-1ex
+        \hspace{.8em}\LARGE\insertframetitle \\
+        \vspace{-.9em}\vrule width.8\paperwidth height1pt depth0ex%
+    \end{beamercolorbox}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLE OF CONTENTS MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setbeamertemplate{section in toc}
+{%
+    \leavevmode\leftskip=6ex%
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor[fg]{section number projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{\hfil\color{bg}\Large\inserttocsectionnumber.\hfil}}%
+  \kern1.25ex\hbox{\Large\inserttocsection}
+    
+}
+
+\setbeamertemplate{subsection in toc}
+{
+    \leavevmode\leftskip=10ex%
+  \llap{%
+    \usebeamerfont*{subsection number projected}%
+    \usebeamercolor[fg]{subsection number projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{\inserttocsubsectionnumber)\hfil}}%
+    \kern1.25ex\hbox{\inserttocsubsection}\par
+}
+
+\setbeamertemplate{subsubsection in toc}
+{
+    \leavevmode\leftskip=17ex%
+  \llap{%
+    \usebeamerfont*{subsubection number projected}%
+    \usebeamercolor[fg]{subsubsection number projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{\hfil\@alph\inserttocsubsubsectionnumber.\hfil}}\kern1.25ex\inserttocsubsubsection\par
+}
+
+
+\setbeamertemplate{bibliography item}[text]
+
+\setbeamertemplate{caption}{\centering\insertcaption\par}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defbeamertemplate{footline}{page number appendix}
+{
+  \leavevmode%
+  \hbox{%
+  
+  \begin{beamercolorbox}[wd=.25\paperwidth,center]{section 2 in foot}%
+    \usebeamerfont{author in head/foot}\vspace{-0.7em}\insertshortauthor
+  \end{beamercolorbox}%
+  %
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=1ex,dp=3ex,center]{section 1 in foot}%    
+    \usebeamerfont{section in foot}%\insertshorttitle
+    \ifx\insertsection\@empty\relax\else\,\insertsection\fi
+  \end{beamercolorbox}%
+  %
+  \begin{beamercolorbox}[wd=.25\paperwidth, center]{section 2 in foot}%
+        \begin{beamercolorbox}[wd=.2\paperwidth,center]{section 2 in foot}
+            \usebeamerfont{date in head/foot}\vspace{-0.7em}\hspace{.04\paperwidth}\insertshortinstitute{}
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.05\paperwidth,right]{section 2 in foot}
+            \usebeamerfont{date in head/foot}\vspace{-1.6em}\Roman{framenumber}\,\,
+        \end{beamercolorbox}
+  \end{beamercolorbox}}%
+  %
+  
+  
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{subsection in foot}
+        \ifx\insertsubsectionhead\@empty\relax\else\@alph\insertsubsectionnumber)\,\insertsubsectionhead\fi
+  \end{beamercolorbox}%  
+  \vskip0pt%
+    }
+
+\g@addto@macro\appendix{%
+    \setbeamertemplate{footline}[page number appendix]%
+}
+
+\makeatother
+
+
+
+
+\mode
+<all>
