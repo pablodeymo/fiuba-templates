@@ -15,3 +15,8 @@ sudo apt-get install texlive-full
 ``` bash
 pdflatex main.tex
 ```
+
+## Instalar el template globalmente
+
+Para instalar el template global, en Linux, copiar el directorio completo **BeamerFIUBA**
+en `~/texmf/tex/latex`.
