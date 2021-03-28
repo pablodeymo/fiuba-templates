@@ -1,0 +1,107 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[
+	backend=biber,
+	style=numeric,
+	citestyle=numeric,
+	sorting=none,
+	url=false]{biblatex}
+
+\setbeamertemplate{bibliography item}[text]
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{Section_Files/biblio.bib}
+
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{lipsum}
+
+
+\setcounter{tocdepth}{3}
+
+\usepackage{bbold}
+\usepackage{scalerel}[2016/12/29]
+
+\newcolumntype{M}[1]{>{$\displaystyle\qquad}p{#1}<{$}}
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage{graphicx}
+\graphicspath{{Im/}}
+
+
+\newcounter{FootlineChoice} 
+% Counter to allow the user to choose between a few footlines implemented by owner
+
+\newcounter{DepartmentLogo}
+% Counter to allow the user to choose whether to display the Department Logo in NE corner
+
+\newcounter{FacultyLogo}
+% Counter to allow the user to choose whether to display the Faculty Logo in SE corner
+\usetheme{FIUBA}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEPARTMENT LOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\DepartmentLogo{theme/logos/QuIC.png}
+% In the folder "Im/theme/logos/" please import the Department logo image. This will appear at north east corner of every frame
+%\setcounter{DepartmentLogo}{2}
+% Please select 0 if you want a blank NE corner for each frame
+% Please select 1 if you want the Department Logo only on the Title Page (NE corner)
+% Please select 2 if you want the Department Logo on each frame (still NE corner)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FACULTY LOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\FacultyLogo{theme/logos/EPB.png}
+% In the folder "Im/theme/logos/" please import the Faculty logo image. This will appear at south east corner of title frame
+
+%\setcounter{FacultyLogo}{1}
+% Please select 1 if you want the Faculty Logo to be displayed in the sE corner of the title frame
+% Please select 0 if you want a blank SE corner for the title frame
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FOOTLINE MANAGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{FootlineChoice}{2}
+% Please select value 0,1, or 2 for the footline alignment.
+% All footlines display the [author] in SW corner and [institute] in SE corner,
+% but you can choose between the following options for the center of the footline :
+
+% Footline Aligment 0 : 
+%       Only the current section is displayed. All is aligned with the very bottom of the frame.
+
+% Footline Aligment 1 :
+%       Only the current section is displayed. All is aligned a bit higher to escape potential crops when projecting.
+
+% Footline Aligment 2 : 
+%       Current section and subsection are displayed.  All is aligned a bit higher to escape potential crops when projecting.
+
+% Footline Alignment 3 :
+%       Nothing displayed at center. [author] and [institute] aligned with very bottom of frame.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN BODY OF PRESENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{\nombremateria}
+\subtitle{\titulopresentacion}
+%\date{21$^{st}$ May of 2019}
+\date{}
+\author{\texorpdfstring{\nombredocente\newline\href{mailto:\maildocente}{\maildocente}}{\nombredocente}}
+\institute[\nombredepartamento]
+{
+  Facultad de Ingeniería\\
+  Universidad de Buenos Aires
+}
