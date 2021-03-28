@@ -14,7 +14,7 @@
         \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
         
         \node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
-            {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/FIUBA_VINCERE_gray_quart_0_10.jpg}};
+            {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/FIUBA-recorte.png}};
         
         \ifnum\value{FacultyLogo}=1
         {
@@ -45,8 +45,8 @@
             {\includegraphics[width=0.1\textwidth]{\DepartmentLogo}};<
         }\fi
         
-        \node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
-            {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/FIUBA_VINCERE_gray_quart_0_10.jpg}};
+        %\node[anchor=south east,inner sep=0pt] at (\the\paperwidth,0)
+        %    {\includegraphics[width=.3\textwidth,keepaspectratio]{theme/FIUBA-recorte.png}};
         
         \node[anchor=north west,inner sep=0pt] at (.05,\the\paperheight)
             {\includegraphics[height=.7\textheight,keepaspectratio]{theme/FIUBA-ligne-bas.jpg}};
@@ -61,6 +61,13 @@
 
 \setbeamercolor{section 1 in foot}{fg = blue_hl_bg_2}
 \setbeamercolor{section 2 in foot}{fg = blue_hl_bg_1}
+\setbeamercolor{section 1 in toc}{fg = blue_hl_bg_1}
+\setbeamercolor{section 2 in toc}{fg = blue_hl_bg_1}
+\setbeamercolor{subsection in foot}{fg = blue_hl_bg_2}
+%\setbeamercolor{subsection in foot}{fg = blue_hl_bg_1}
+\setbeamercolor{section 1 in head}{fg = blue_hl_bg_2}
+\setbeamercolor{section 2 in head}{fg = blue_hl_bg_1}
+\setbeamercolor{frametitle}{fg = blue_hl_bg_2}
 \setbeamerfont{subsection in foot}{size=\tiny}
 \setbeamerfont{section in foot}{size=\scriptsize}
 
